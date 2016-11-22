@@ -31,10 +31,42 @@
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#2F3BA2">
 
+    <style>
+      @keyframes rollAway {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        20% {
+          transform: translate(0px, 100px) rotate(0deg);
+        }
+        100% {
+          transform: translate(1000px, 100px) rotate(359.99deg);
+        }
+      }
+      img.img-circle.animate {
+        animation: rollAway 3s;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $(function() {
+      $("#add").click(function(event) {
+        $("img.img-circle").eq(0).toggleClass("animate");
+
+      });
+    });
+
+      // document.addEventListener("load", function(event) {
+      //   document.getElementById("add").addEventListener("click", function(event) {
+      //     console.log("Animate that face!");
+      //     document.getElementsByTagName("img")[0].classList.add("animate");
+      //   });
+      // });
+    </script>
+
  <link href="favicon.png" rel="icon" />
 
-  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-yellow.min.css" />
-
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-purple.min.css" />
     <!-- Material Design icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -46,10 +78,20 @@
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3 style="text-align: center; width: 100%;" >Jessie Pullaro</h3>
+        <div class=" mdl-layout__header-row">
+          <h3 class="mdl-layout--large-screen-only" style="text-align: center; width: 100%;" >Jessie Pullaro</h3>
         </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+
+        <div style="width: calc(100% - 40px / 2); display: inline-block; text-align: center;" class="mdl-layout--large-screen-only mdl-layout__header-row">
+        <img class=" img-circle" style=" text-align: center;" src="images/cat.JPG">
+        </div>
+        <div class=" mdl-layout__header-row">
+        </div>
+        <div class=" mdl-layout__header-row">
+        </div>
+        <div class=" mdl-layout__header-row">
+        </div>
+        <div class=" mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
